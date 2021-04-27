@@ -1,0 +1,23 @@
+.TodoList {
+  width: 500px;
+}
+
+.TodoList-header {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.TodoList-header .fa-sun{
+  color: #fafafa;
+  font-size: 28px;
+}
+
+.TodoList-header h1 {
+  font-size: 42px;
+  font-weight: normal;
+  letter-spacing: 12px;
+  color: #fafafa;
+}
