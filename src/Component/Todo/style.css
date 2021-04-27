@@ -1,0 +1,81 @@
+.Todo {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #34364b;
+}
+
+.Todo:last-child {
+  border-bottom: none;
+}
+
+.Todo li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.Todo li input[type="checkbox"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index:10;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.Todo li .toggle-completed {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
+  overflow: hidden;
+  background-image: linear-gradient(125deg,rgb(34, 144, 247),rgba(119, 4, 135, 0.789));
+}
+
+.Todo li .toggle-completed::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  width: 24px;
+  height: 24px;
+  background-color: #25273c;
+  border-radius: 12px;
+}
+
+.Todo-text {
+  padding: 0px 15px;
+  color: #bbbdd2;
+}
+
+.Todo-remove-btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin-left: auto;
+}
+
+.Todo-remove-btn .cross-icon {
+  opacity: 0;
+  font-size: 26px;
+  color: #34364b;
+  cursor: pointer;
+}
+
+.Todo li:hover .cross-icon {
+  opacity: 1;
+  transition: all 0.25s;
+}
+
+.toggle-completed .check-icon {
+  z-index: 1;
+}

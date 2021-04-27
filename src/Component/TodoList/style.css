@@ -10,14 +10,91 @@
   align-items: center;
 }
 
-.TodoList-header .fa-sun{
-  color: #fafafa;
-  font-size: 28px;
-}
-
 .TodoList-header h1 {
   font-size: 42px;
   font-weight: normal;
   letter-spacing: 12px;
   color: #fafafa;
+}
+
+.TodoList-container {
+  border-radius: 3px;
+  height: 400px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: #25273c;
+}
+
+.TodoList-container.light-mode  {
+  border-radius: 3px;
+  height: 400px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+.TodoList-todos {
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.TodoList-todos::-webkit-scrollbar {
+  width: 8px;
+}
+
+.TodoList-todos::-webkit-scrollbar-thumb {
+  background-color: #3a3c52;
+  width: 4px;
+}
+
+.TodoList-todos::-webkit-scrollbar-track {
+  background-color: #4f5168;
+  width: 6px;
+}
+
+.TodoList-todos ul {
+  list-style: none;
+  padding-left: 0%;
+  margin: 0%;
+}
+
+.TodoList-footer {
+  width: 100%;
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  height: 60px;
+  color: #bbbdd2;
+  border-top: 1px solid #34364b;
+}
+
+.TodoList-footer .filter-completed input[type="radio"] {
+  opacity: 0;
+}
+
+.TodoList-footer .filter-completed label {
+  cursor: pointer;
+}
+
+.TodoList-footer .filter-completed label.active {
+  color: rgb(19, 106, 238);
+  transition: all 0.25s;
+}
+
+.TodoList-footer .clear-completed {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #bbbdd2;
+  font-size: 18px;
 }

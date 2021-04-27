@@ -23,12 +23,12 @@
   border: none
 }
 
-.NewTodoForm .NewTodoForm-form input[type=text]::placeholder {
+.NewTodoForm .NewTodoForm-form input[type="text"]::placeholder {
   color: #bbbdd2;
   font-size: 21px;
 }
 
-.NewTodoForm .NewTodoForm-form input[type=text]:focus {
+.NewTodoForm .NewTodoForm-form input[type="text"]:focus {
   outline: none;
 }
 
@@ -41,29 +41,28 @@
   cursor: pointer;
 }
 
-.NewTodoForm .NewTodoForm-form .add-task-btn .fa-check {
-  opacity: 0;
-  color: #4ced37;
-  font-size: 20px;
+.NewTodoForm .NewTodoForm-form .add-task-btn:visited {
+  background-color: #25273c;
+  outline: none;
   transition: all 0.25s;
 }
 
-.NewTodoForm .NewTodoForm-form .add-task-btn:hover .fa-check {
-  opacity: 1;
-  transition: all 0.25s;
-}
-
-.NewTodoForm .NewTodoForm-form .add-task-btn:focus {
+.NewTodoForm .NewTodoForm-form .add-task-btn:active {
   background-color: #4ced37;
   outline: none;
   transition: all 0.25s;
 }
 
-.NewTodoForm .NewTodoForm-form .add-task-btn:focus .fa-check {
-  color: #f5f5f5;
+.NewTodoForm .NewTodoForm-form .add-task-btn:focus {
   outline: none;
   transition: all 0.25s;
 }
+
+/* .NewTodoForm .NewTodoForm-form .add-task-btn:active .check-icon {
+  color: #fafafa;
+  outline: none;
+  transition: all 0.25s;
+} */
 
 .input-task-label {
   display: none;
