@@ -13,7 +13,6 @@ import { ReactComponent as SunIcon } from "../../images/icon-sun.svg";
 import "./style.css";
 
 const TodoList = () => {
-  // const [todos, setTodos] = useState([]);
   const [checkState, setCheckState] = useState("all");
   const todos = useSelector((state) => state.todos.todos || []);
   const filteredTodos = useSelector((state) => state.todos.filteredTodos || todos);
@@ -27,7 +26,6 @@ const TodoList = () => {
   }, [dispatch]);
 
   const handleChecked = (e) => {
-    console.log(e.target.value);
     setCheckState(e.target.value);
   };
 
