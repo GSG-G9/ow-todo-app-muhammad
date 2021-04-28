@@ -67,7 +67,7 @@ const TodoList = () => {
   const todosList = todos.length > 0 && todos.map(({ id, content, completed }) => (
     <Todo
       key={id}
-      task={content}
+      content={content}
       completed={completed}
       id={id}
     />
@@ -85,10 +85,10 @@ const TodoList = () => {
         )}
       </div>
       <TodoForm />
-      <div className={`TodoList-container ${lightMode ? "light-mode" : "" }`}>
+      <div className={`TodoList-container ${lightMode && "light-mode" }`}>
         <div className="TodoList-todos">
           <ul>{todosList}</ul>
-          {todos.length === 0 && <p>No Todos!</p>}
+          {todos.length === 0 && <p className="no-todo-msg">You don't have any Todos!</p>}
         </div>
         <TodoFooter handleChecked={handleChecked} checkState={checkState} />
       </div>

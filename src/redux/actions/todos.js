@@ -20,11 +20,17 @@ export const removeTodo = (id) => {
   }
 }
 
-export const updateTodo = (id, update) => {
+export const removeAllTodos = () => {
+  return {
+    type: types.REMOVE_COMPLETED_TODOS,
+  }
+}
+
+export const updateTodo = (id, content) => {
   return {
     type: types.UPDATE_TODO,
     id,
-    update,
+    content,
   }
 }
 
@@ -40,5 +46,12 @@ export const toggleLightMode = (lightMode) => {
   return {
     type: types.TOGGLE_LIGHT_MODE,
     lightMode,
+  }
+}
+
+export const errorEmptyInput = (message) => {
+  return {
+    type: types.EMPTY_ERROR_INPUT,
+    message,
   }
 }

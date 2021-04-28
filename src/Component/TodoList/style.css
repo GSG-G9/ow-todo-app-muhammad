@@ -18,7 +18,7 @@
 }
 
 .TodoList-container {
-  border-radius: 3px;
+  border-radius: 5px;
   height: 400px;
   margin-top: 20px;
   display: flex;
@@ -26,6 +26,7 @@
   justify-content: flex-start;
   align-items: center;
   background-color: #25273c;
+  position: relative;
 }
 
 .TodoList-container.light-mode  {
@@ -41,6 +42,7 @@
 
 .TodoList-todos {
   overflow-y: scroll;
+  min-height: 83%;
   width: 100%;
 }
 
@@ -50,7 +52,6 @@
 
 .TodoList-todos::-webkit-scrollbar-thumb {
   background-color: #3a3c52;
-  width: 4px;
 }
 
 .TodoList-todos::-webkit-scrollbar-track {
@@ -58,8 +59,41 @@
   width: 6px;
 }
 
+.App.light-mode .TodoList-todos::-webkit-scrollbar {
+  width: 8px;
+}
+
+.App.light-mode .TodoList-todos::-webkit-scrollbar-thumb {
+  background-color: #a0a1b6;
+}
+
+.App.light-mode .TodoList-todos::-webkit-scrollbar-track {
+  background-color: #cdceda;
+  min-height: 100%;
+  width: 6px;
+}
+
+
 .TodoList-todos ul {
   list-style: none;
   padding-left: 0%;
   margin: 0%;
+}
+
+.no-todo-msg {
+  color: #4f5168;
+  font-style: italic;
+  margin-top: 3rem;
+}
+
+@media (max-width:992px) {
+  .TodoList {
+    width: 500px;
+  }
+}
+
+@media (max-width:768px) {
+  .TodoList {
+    width: 90%;
+  }
 }

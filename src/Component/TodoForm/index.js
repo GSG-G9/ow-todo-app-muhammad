@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { addTodo } from "../../redux/actions/todos";
+import { addTodo, errorEmptyInput } from "../../redux/actions/todos";
 import "./style.css";
 
 const NewTodoForm = () => {
@@ -14,6 +14,10 @@ const NewTodoForm = () => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
+    if (!content.trim()) {
+      return dispatch(errorEmptyInput("Enter Anythings!!!"));
+    };
+    console.log(content.trim());
     dispatch(
       addTodo(content)
     );

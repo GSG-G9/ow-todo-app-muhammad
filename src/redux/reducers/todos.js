@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 import * as types from "../types";
 
@@ -32,19 +32,28 @@ const todoReducer = (state = todoState, action) => {
           lastUpdate: Date.now(),
         },
       ];
-      return {...state, todos: todosWithNew};
+      return { ...state, todos: todosWithNew };
     case types.REMOVE_TODO:
       let todoAfterRemoved = state.todos.filter(({ id }) => id !== action.id);
-      console.log("removed", action);
       return { ...state, todos: todoAfterRemoved };
+    case types.REMOVE_COMPLETED_TODOS:
+      return { ...state, todos: state.todos.filter(todo => todo.completed === false) };
     case types.UPDATE_TODO:
-      return state.todos.map((todo) => {
-        if (todo.id === action.id) {
-          return { ...todo, ...action.update };
-        } else {
-          return todo;
+      console.log(action);
+      for (const key in state) {
+        if (key === "todos") {
+          const todosArr = state.todos.map((todo) => {
+            if (todo.id === action.id) {
+              return { ...todo, content: action.content };
+            } else {
+              return todo;
+            }
+          });
+          console.log(todosArr);
+          state["todos"] = todosArr;
         }
-      });
+      }
+      return state;
     case types.TOGGLE_COMPLETE_TODO:
       for (const key in state) {
         if (key === "todos") {
@@ -63,6 +72,8 @@ const todoReducer = (state = todoState, action) => {
     case types.TOGGLE_LIGHT_MODE:
       console.log(action.lightMode);
       return { ...state, lightMode: !action.lightMode };
+    case types.EMPTY_ERROR_INPUT:
+      return { ...state, error: action.message };
     default:
       return state;
   }

@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+
+import { errorEmptyInput } from '../../redux/actions/todos';
 
 import { ReactComponent as CrossIcon } from '../../images/CrossIcon.svg';
 
@@ -8,7 +11,11 @@ import './style.css';
 const Alert = ({message, duration}) => {
   console.log(message);
   const [close, setClose] = useState(false);
-  setTimeout(() => setClose(true), duration);
+  const dispatch = useDispatch();
+  setTimeout(() => {
+    dispatch(errorEmptyInput(""));
+    setClose(true)
+  }, duration);
   return (
     <div className={`Alert ${close && 'close-alert'}`}>
       <span>{message}</span>

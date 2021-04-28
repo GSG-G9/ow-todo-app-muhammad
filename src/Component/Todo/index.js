@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
-import { toggleCompleteTodo, removeTodo } from '../../redux/actions/todos';
+import { toggleCompleteTodo, removeTodo, updateTodo } from '../../redux/actions/todos';
 
 import { ReactComponent as CrossIcon } from '../../images/CrossIcon.svg';
 import { ReactComponent as CheckIcon } from '../../images/icon-check.svg';
 
 import './style.css';
 
-const Todo = ({ remove, update, id, toggleTodo, task: lastTask, completed }) => {
+const Todo = ({ id, content: lastTask, completed }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [task, setTask] = useState(lastTask);
+  const [content, setContent] = useState(lastTask);
   const dispatch = useDispatch();
 
   const handleRemove = (id) => {
@@ -23,17 +23,16 @@ const Todo = ({ remove, update, id, toggleTodo, task: lastTask, completed }) => 
 
   const handleUpdate = (evt) => {
     evt.preventDefault();
-    //Take New Task Data and Pass Up To Parent
-    update(id, task);
+    dispatch(updateTodo(id, content));
     setIsEditing(false);
+    // setContent("");
   };
 
   const handleChange = (evt) => {
-    setTask(evt.target.value);
+    setContent(evt.target.value);
   };
 
   const handleToggle = (id, completed) => {
-    // toggleTodo(id);
     dispatch(toggleCompleteTodo(id, completed));
   };
 
@@ -42,8 +41,8 @@ const Todo = ({ remove, update, id, toggleTodo, task: lastTask, completed }) => 
     result = (
       <div className="Todo">
         <form className="Todo-edit-form" onSubmit={handleUpdate}>
-          <input type="text" name="task" value={task} onChange={handleChange} />
-          <button>Save</button>
+          <input type="text" name="task" value={content} onChange={handleChange} />
+          <button className="save-edit-btn" type="submit">Save</button>
         </form>
       </div>
     );
@@ -51,11 +50,11 @@ const Todo = ({ remove, update, id, toggleTodo, task: lastTask, completed }) => 
     result = (
       <div className="Todo">
         <li onDoubleClick={toggleForm}>
-          <div className="toggle-completed">
+          <div className={`toggle-completed ${completed && 'completed'}`}>
             {completed && <CheckIcon className="check-icon" />}
             <input type="checkbox" onClick={() => handleToggle(id, completed)} />
           </div>
-          <div className={`Todo-text ${completed && 'strike-line'}`}>{task}</div>
+          <div className={`Todo-text ${completed && 'strike-line'}`}>{content}</div>
           <button className="Todo-remove-btn" onClick={() => handleRemove(id)}>
             <CrossIcon className="cross-icon" />
           </button>
