@@ -1,5 +1,5 @@
 import React from "react";
-import { Provider, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import TodoList from "./Component/TodoList/index";
 import "./App.css";

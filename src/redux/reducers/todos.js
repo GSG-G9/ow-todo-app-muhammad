@@ -10,16 +10,12 @@ const todoState = {
 };
 
 const todoReducer = (state = todoState, action) => {
-  console.log("state", state);
   switch (action.type) {
     case types.GET_TODOS_REQUESTED:
-      console.log(state);
       return { ...state, loading: true };
     case types.GET_TODOS_SUCCESS:
-      console.log(state);
       return { ...state, loading: false, todos: action.todos };
     case types.GET_TODOS_FAILED:
-      console.log(state);
       return { ...state, loading: false, error: action.message };
     case types.ADD_TODO:
       const todosWithNew = [
@@ -39,7 +35,6 @@ const todoReducer = (state = todoState, action) => {
     case types.REMOVE_COMPLETED_TODOS:
       return { ...state, todos: state.todos.filter(todo => todo.completed === false) };
     case types.UPDATE_TODO:
-      console.log(action);
       for (const key in state) {
         if (key === "todos") {
           const todosArr = state.todos.map((todo) => {
@@ -49,7 +44,6 @@ const todoReducer = (state = todoState, action) => {
               return todo;
             }
           });
-          console.log(todosArr);
           state["todos"] = todosArr;
         }
       }
@@ -59,7 +53,6 @@ const todoReducer = (state = todoState, action) => {
         if (key === "todos") {
           const todosArr = state.todos.map((todo) => {
             if (todo.id === action.id) {
-              console.log(todo);
               return { ...todo, completed: !action.completed };
             } else {
               return todo;
@@ -70,7 +63,6 @@ const todoReducer = (state = todoState, action) => {
       }
       return state;
     case types.TOGGLE_LIGHT_MODE:
-      console.log(action.lightMode);
       return { ...state, lightMode: !action.lightMode };
     case types.EMPTY_ERROR_INPUT:
       return { ...state, error: action.message };

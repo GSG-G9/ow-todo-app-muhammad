@@ -13,7 +13,7 @@ const TodoFooter = ({ handleChecked, checkState }) => {
   return (
     <>
       <div className={`TodoList-footer ${lightMode && "light-mode"}`}>
-        <div className="show-completed"> {todos.length} items left</div>
+        <div className="show-completed"> {todos.filter(todo => todo.completed === false).length} items left</div>
         <div className="filter-completed">
           <label
             htmlFor="all"

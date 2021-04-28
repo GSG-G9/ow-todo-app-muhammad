@@ -21,43 +21,12 @@ const TodoList = () => {
   const error = useSelector((state) => state.todos.error);
   const dispatch = useDispatch();
 
-  // console.log("TodoList: ", todos);
-
   useEffect(() => {
     dispatch(getTodos());
   }, [dispatch]);
 
-  // const remove = (id) => {
-  //   // setTodos(todos.filter((todo) => todo.id !== id));
-  //   // todos = todos.filter((todo) => todo.id !== id);
-  // };
-
-  // const update = (id, updateTask) => {
-  //   const updateTodos = todos.map((todo) => {
-  //     if (todo.id === id) {
-  //       return { ...todo, task: updateTask };
-  //     }
-  //     return todo;
-  //   });
-  //   // setTodos(updateTodos);
-  //   // todos = updateTodos;
-  // };
-
-  // const toggleCompletion = (id) => {
-  //   const updateTodos = todos.map((todo) => {
-  //     if (todo.todo_id === id) {
-  //       return { ...todo, completed: !todo.completed };
-  //     }
-  //     return todo;
-  //   });
-  //   // setTodos(updateTodos);
-  //   // todos = updateTodos;
-  // };
-
   const handleChecked = (e) => {
-    console.log(e.target.value);
     setCheckState(e.target.value);
-    // console.log(checkState);
   };
 
   const toggleDarkMode = (lightModeState) => {
@@ -75,6 +44,7 @@ const TodoList = () => {
 
   return (
     <div className="TodoList">
+      {loading && "Loading..."}
       {error && <Alert message={error} duration={5000} />}
       <div className="TodoList-header">
         <h1>TODO</h1>

@@ -20,6 +20,10 @@
   cursor: pointer;
 }
 
+.light-mode .filter-completed {
+  color: #444553;
+}
+
 .filter-completed label.active {
   color: rgb(19, 106, 238);
   transition: all 0.25s;
@@ -53,7 +57,7 @@
 
 .light-mode .filter-completed__small_screen  {
   background-color: #f5f5f5;
-  color: #34364b;
+  color: #444553;
 }
 
 @media (max-width:600px) {

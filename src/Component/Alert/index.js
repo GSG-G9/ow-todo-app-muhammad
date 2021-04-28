@@ -9,7 +9,6 @@ import { ReactComponent as CrossIcon } from '../../images/CrossIcon.svg';
 import './style.css';
 
 const Alert = ({message, duration}) => {
-  console.log(message);
   const [close, setClose] = useState(false);
   const dispatch = useDispatch();
   setTimeout(() => {

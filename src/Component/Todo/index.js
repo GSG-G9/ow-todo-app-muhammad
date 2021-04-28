@@ -13,7 +13,6 @@ const Todo = ({ id, content: lastTask, completed }) => {
   const dispatch = useDispatch();
 
   const handleRemove = (id) => {
-    console.log("ID: ", id);
     dispatch(removeTodo(id));
   };
 
@@ -25,7 +24,6 @@ const Todo = ({ id, content: lastTask, completed }) => {
     evt.preventDefault();
     dispatch(updateTodo(id, content));
     setIsEditing(false);
-    // setContent("");
   };
 
   const handleChange = (evt) => {
