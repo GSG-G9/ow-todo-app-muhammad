@@ -9,6 +9,7 @@
   background-color: #181824;
   min-height: 100vh;
   z-index: 0;
+  font-family: 'Josefin Sans', sans-serif;
   transition: all 0.25s;
 }
 
