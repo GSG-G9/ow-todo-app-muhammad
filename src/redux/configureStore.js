@@ -1,12 +1,25 @@
-import { createStore, combineReducers } from "redux";
-import todoReducer from './reducers/todos';
-import filterReducer from './reducers/filters';
+import { createStore, applyMiddleware, compose } from "redux";
+import createSagaMiddleware from "redux-saga";
 
-const store =  () => {
-  const store = createStore(
-    combineReducers({todoReducer, filterReducer})
-  );
-  return store;
-};
+import rootReducer from "./reducers";
+// import filterReducer from "./reducers/filters";
+import rootSaga from "./sagas/index";
+
+const sagaMiddleware = createSagaMiddleware();
+
+// const store = () => {
+//   const store = createStore(
+//     applyMiddleware(sagaMiddleware),
+//     combineReducers({ todos: todosReducer, filters: filterReducer }),
+//   );
+//   sagaMiddleware.run(rootSaga);
+//   return store;
+// };
+
+const store = compose(
+  applyMiddleware(sagaMiddleware),
+)(createStore)(rootReducer);
+
+sagaMiddleware.run(rootSaga);
 
 export default store;

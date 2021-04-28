@@ -1,29 +1,44 @@
-import { v4 as uuidv4 } from 'uuid';
+import * as types from '../types';
 
-export const addTodo = ({ content = "", completed = false } = {}) => {
+export const getTodos = () => {
   return {
-    type: "ADD_NEW_TODO",
-    todo: {
-      id: uuidv4(),
-      content,
-      completed,
-      created_on: Date.now(),
-      last_update: Date.now(),
-    }
+    type: types.GET_TODOS_REQUESTED,
+  }
+}
+
+export const addTodo = (content) => {
+  return {
+    type: types.ADD_TODO,
+    content
   };
 };
 
-export const removeTodo = ({id}) => {
+export const removeTodo = (id) => {
   return {
-    type: 'REMOVE_TODO',
+    type: types.REMOVE_TODO,
     id,
   }
 }
 
 export const updateTodo = (id, update) => {
   return {
-    type: 'UPDATE_TODO',
+    type: types.UPDATE_TODO,
     id,
     update,
+  }
+}
+
+export const toggleCompleteTodo = (id, completed) => {
+  return {
+    type: types.TOGGLE_COMPLETE_TODO,
+    id,
+    completed,
+  }
+}
+
+export const toggleLightMode = (lightMode) => {
+  return {
+    type: types.TOGGLE_LIGHT_MODE,
+    lightMode,
   }
 }

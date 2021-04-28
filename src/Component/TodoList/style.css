@@ -63,38 +63,3 @@
   padding-left: 0%;
   margin: 0%;
 }
-
-.TodoList-footer {
-  width: 100%;
-  padding: 5px 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-  height: 60px;
-  color: #bbbdd2;
-  border-top: 1px solid #34364b;
-}
-
-.TodoList-footer .filter-completed input[type="radio"] {
-  opacity: 0;
-}
-
-.TodoList-footer .filter-completed label {
-  cursor: pointer;
-}
-
-.TodoList-footer .filter-completed label.active {
-  color: rgb(19, 106, 238);
-  transition: all 0.25s;
-}
-
-.TodoList-footer .clear-completed {
-  background-color: transparent;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  color: #bbbdd2;
-  font-size: 18px;
-}

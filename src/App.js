@@ -6,7 +6,9 @@ import configureStore from './redux/configureStore';
 import TodoList from "./Component/TodoList/index";
 import "./App.css";
 
-const store = configureStore();
+const store = configureStore;
+
+console.log(store.getState());
 
 function App() {
   return (

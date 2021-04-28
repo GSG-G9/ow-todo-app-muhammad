@@ -79,3 +79,8 @@
 .toggle-completed .check-icon {
   z-index: 1;
 }
+
+.strike-line {
+  text-decoration: line-through;
+  color: #4a4c5a;
+}
