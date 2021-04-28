@@ -16,6 +16,7 @@ const TodoList = () => {
   // const [todos, setTodos] = useState([]);
   const [checkState, setCheckState] = useState("all");
   const todos = useSelector((state) => state.todos.todos || []);
+  const filteredTodos = useSelector((state) => state.todos.filteredTodos || todos);
   const loading = useSelector((state) => state.todos.loading);
   const lightMode = useSelector((state) => state.todos.lightMode);
   const error = useSelector((state) => state.todos.error);
@@ -26,6 +27,7 @@ const TodoList = () => {
   }, [dispatch]);
 
   const handleChecked = (e) => {
+    console.log(e.target.value);
     setCheckState(e.target.value);
   };
 
@@ -33,7 +35,7 @@ const TodoList = () => {
     dispatch(toggleLightMode(lightModeState));
   };
 
-  const todosList = todos.length > 0 && todos.map(({ id, content, completed }) => (
+  const todosList = filteredTodos.length > 0 && filteredTodos.map(({ id, content, completed }) => (
     <Todo
       key={id}
       content={content}

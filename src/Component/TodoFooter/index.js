@@ -2,7 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
 
-import { removeAllTodos } from "../../redux/actions/todos";
+import {
+  removeAllTodos,
+  filterTodosByCompleted,
+} from "../../redux/actions/todos";
 
 import "./style.css";
 
@@ -10,10 +13,19 @@ const TodoFooter = ({ handleChecked, checkState }) => {
   const todos = useSelector((state) => state.todos.todos);
   const lightMode = useSelector((state) => state.todos.lightMode);
   const dispatch = useDispatch();
+
+  const handleCompletedTodo = (e, filterState = "all") => {
+    dispatch(filterTodosByCompleted(filterState));
+    handleChecked(e);
+  };
+
   return (
     <>
       <div className={`TodoList-footer ${lightMode && "light-mode"}`}>
-        <div className="show-completed"> {todos.filter(todo => todo.completed === false).length} items left</div>
+        <div className="show-completed">
+          {" "}
+          {todos.filter((todo) => todo.completed === false).length} items left
+        </div>
         <div className="filter-completed">
           <label
             htmlFor="all"
@@ -25,7 +37,7 @@ const TodoFooter = ({ handleChecked, checkState }) => {
               name="state"
               id="all"
               value="all"
-              onChange={handleChecked}
+              onChange={(e) => handleCompletedTodo(e, "all")}
               checked={checkState === "all"}
             />
           </label>
@@ -39,7 +51,7 @@ const TodoFooter = ({ handleChecked, checkState }) => {
               name="state"
               id="active"
               value="active"
-              onChange={handleChecked}
+              onChange={(e) => handleCompletedTodo(e, "active")}
               checked={checkState === "active"}
             />
           </label>
@@ -53,7 +65,7 @@ const TodoFooter = ({ handleChecked, checkState }) => {
               name="state"
               id="completed"
               value="completed"
-              onChange={handleChecked}
+              onChange={(e) => handleCompletedTodo(e, "completed")}
               checked={checkState === "completed"}
             />
           </label>
@@ -67,7 +79,11 @@ const TodoFooter = ({ handleChecked, checkState }) => {
           </button>
         </div>
       </div>
-      <div className={`filter-completed filter-completed__small_screen ${lightMode && 'light-mode'}`}>
+      <div
+        className={`filter-completed filter-completed__small_screen ${
+          lightMode && "light-mode"
+        }`}
+      >
         <label htmlFor="all" className={`${checkState === "all" && "active"}`}>
           All
           <input

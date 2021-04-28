@@ -18,7 +18,6 @@ function* fetchTodos() {
     const todos = yield call(getTodos);
     yield put({ type: "GET_TODOS_SUCCESS", todos });
   } catch (error) {
-    console.log("Error Saga: ", error);
     yield put({ type: "GET_TODOS_FAILED", message: error.message });
   }
 }

@@ -55,3 +55,10 @@ export const errorEmptyInput = (message) => {
     message,
   }
 }
+
+export const filterTodosByCompleted = (filterState) => {
+  return {
+    type: types.FILTER_BY_COMPLETED_TODOS,
+    filterState,
+  }
+}

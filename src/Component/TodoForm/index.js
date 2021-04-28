@@ -17,7 +17,6 @@ const NewTodoForm = () => {
     if (!content.trim()) {
       return dispatch(errorEmptyInput("Enter Anythings!!!"));
     };
-    console.log(content.trim());
     dispatch(
       addTodo(content)
     );
