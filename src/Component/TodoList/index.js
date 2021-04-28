@@ -15,7 +15,6 @@ import "./style.css";
 const TodoList = () => {
   const [checkState, setCheckState] = useState("all");
   const todos = useSelector((state) => state.todos.todos || []);
-  const filteredTodos = useSelector((state) => state.todos.filteredTodos || todos);
   const loading = useSelector((state) => state.todos.loading);
   const lightMode = useSelector((state) => state.todos.lightMode);
   const error = useSelector((state) => state.todos.error);
@@ -33,7 +32,11 @@ const TodoList = () => {
     dispatch(toggleLightMode(lightModeState));
   };
 
-  const todosList = filteredTodos.length > 0 && filteredTodos.map(({ id, content, completed }) => (
+  const todosList = todos.length > 0 && todos.filter(x => {
+    if(checkState === "all") return x;
+    if(checkState === "active") return x.completed === false;
+    return x.completed === true;
+  }).map(({ id, content, completed }) => (
     <Todo
       key={id}
       content={content}

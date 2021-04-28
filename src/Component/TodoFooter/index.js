@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 
 import {
   removeAllTodos,
-  filterTodosByCompleted,
 } from "../../redux/actions/todos";
 
 import "./style.css";
@@ -13,11 +12,6 @@ const TodoFooter = ({ handleChecked, checkState }) => {
   const todos = useSelector((state) => state.todos.todos);
   const lightMode = useSelector((state) => state.todos.lightMode);
   const dispatch = useDispatch();
-
-  const handleCompletedTodo = (e, filterState = "all") => {
-    dispatch(filterTodosByCompleted(filterState));
-    handleChecked(e);
-  };
 
   return (
     <>
@@ -37,7 +31,7 @@ const TodoFooter = ({ handleChecked, checkState }) => {
               name="state"
               id="all"
               value="all"
-              onChange={(e) => handleCompletedTodo(e, "all")}
+              onChange={handleChecked}
               checked={checkState === "all"}
             />
           </label>
@@ -51,7 +45,7 @@ const TodoFooter = ({ handleChecked, checkState }) => {
               name="state"
               id="active"
               value="active"
-              onChange={(e) => handleCompletedTodo(e, "active")}
+              onChange={handleChecked}
               checked={checkState === "active"}
             />
           </label>
@@ -65,7 +59,7 @@ const TodoFooter = ({ handleChecked, checkState }) => {
               name="state"
               id="completed"
               value="completed"
-              onChange={(e) => handleCompletedTodo(e, "completed")}
+              onChange={handleChecked}
               checked={checkState === "completed"}
             />
           </label>

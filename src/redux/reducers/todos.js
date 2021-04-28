@@ -69,21 +69,6 @@ const todoReducer = (state = todoState, action) => {
       return { ...state, lightMode: !action.lightMode };
     case types.EMPTY_ERROR_INPUT:
       return { ...state, error: action.message };
-    case types.FILTER_BY_COMPLETED_TODOS:
-      let cloneArr = [...state.todos];
-      let filteredTodos = cloneArr.filter((todo) => {
-        if (action.filterState === "completed") {
-          return todo.completed === true;
-        } else if (action.filterState === "active") {
-          return todo.completed === false;
-        } else if(action.filterState === "all") {
-          return todo;
-        }
-      });
-      return {
-        ...state,
-        filteredTodos
-      };
     default:
       return state;
   }
