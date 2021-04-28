@@ -12,16 +12,26 @@
   border-top: 1px solid #34364b;
 }
 
+.App.light-mode .TodoList-footer  {
+  border-top: 1px solid #bbbdd2;
+}
+
+.filter-completed {
+  font-size: 14px;
+}
+
 .filter-completed input[type="radio"] {
   opacity: 0;
 }
 
 .filter-completed label {
   cursor: pointer;
+  font-size: inherit;
 }
 
 .light-mode .filter-completed {
   color: #444553;
+  font-size: 14px;
 }
 
 .filter-completed label.active {
@@ -38,9 +48,15 @@
   font-size: 18px;
 }
 
+.TodoList-footer .clear-completed,
+.TodoList-footer .show-completed {
+  font-size: 14px;
+}
+
 .light-mode .TodoList-footer .clear-completed,
 .light-mode .TodoList-footer .show-completed {
   color: #34364b;
+  font-size: 14px;
 }
 
 .filter-completed__small_screen {

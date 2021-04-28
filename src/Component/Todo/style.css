@@ -10,6 +10,10 @@
   border-bottom: 1px solid #34364b;
 }
 
+.App.light-mode .Todo  {
+  border-bottom: 1px solid #bbbdd2;
+}
+
 /* .Todo:last-child {
   border-bottom: none;
 } */
@@ -138,6 +142,10 @@
   border-bottom: 1px solid #34364b;
 }
 
+.App.light-mode .Todo .Todo-edit-form {
+  border-bottom: 1px solid #bbbdd2;
+}
+
 .Todo .Todo-edit-form input[type=text] {
   width: 88%;
   color: #bbbdd2;
@@ -169,6 +177,10 @@
   cursor: pointer;
 }
 
+.App.light-mode .Todo .Todo-edit-form .save-edit-btn {
+  color: #5b5d72;
+}
+
 .Todo .Todo-edit-form .save-edit-btn:focus {
   outline: none;
 }
@@ -177,3 +189,6 @@
   color: #45475c;
 }
 
+.App.light-mode .Todo .Todo-edit-form .save-edit-btn:hover {
+  color: #373947;
+}
