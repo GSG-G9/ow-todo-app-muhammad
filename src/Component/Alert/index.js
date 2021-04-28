@@ -18,7 +18,7 @@ const Alert = ({message, duration}) => {
   return (
     <div className={`Alert ${close && 'close-alert'}`}>
       <span>{message}</span>
-      <CrossIcon onClick={() => setClose(true)} />
+      <CrossIcon className="cross-icon" onClick={() => setClose(true)} />
     </div>
   )
 }
