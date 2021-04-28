@@ -79,6 +79,7 @@
 @media (max-width:600px) {
   .TodoList-footer .filter-completed {
     display: none;
+    transition: all 0.25s;
   }
 
   .filter-completed__small_screen {
@@ -88,5 +89,6 @@
     align-items: center;
     transition: all 0.25s;
     color: #bbbdd2;
+    transition: all 0.25s;
   }
 }
