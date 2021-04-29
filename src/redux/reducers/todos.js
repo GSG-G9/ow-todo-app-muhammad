@@ -4,7 +4,7 @@ import * as types from "../types";
 
 const todoState = {
   todos: [],
-  loading: true,
+  loading: false,
   error: "",
   lightMode: false,
 };
