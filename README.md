@@ -18,14 +18,15 @@ Click here [Todo App](https://todo-redux-saga.netlify.app/) to get a nice experi
 
 ## App Images
 **Dark Mode**
+
 ![image](https://user-images.githubusercontent.com/42316204/116536154-413a7e00-a8ed-11eb-82d6-b5ffd7857978.png)
-**Mobile mode**
-![image](https://user-images.githubusercontent.com/42316204/116536466-9ececa80-a8ed-11eb-9192-a6da861412cc.png)
 
 **Light Mode**
+
 ![image](https://user-images.githubusercontent.com/42316204/116536276-63340080-a8ed-11eb-9c7a-85797a32bab1.png)
+
 **Mobile Mode**
-![image](https://user-images.githubusercontent.com/42316204/116536416-8c549100-a8ed-11eb-9bdb-4a614582fc50.png)
+![image](https://user-images.githubusercontent.com/42316204/116536416-8c549100-a8ed-11eb-9bdb-4a614582fc50.png)![image](https://user-images.githubusercontent.com/42316204/116536466-9ececa80-a8ed-11eb-9192-a6da861412cc.png)
 
 
 
