@@ -32,11 +32,12 @@
   align-items: center;
   background-color: #25273c;
   position: relative;
+  box-shadow: 0 0 10px 0 #34343864;
   transition: all 0.25s;
 }
 
 .TodoList-container.light-mode  {
-  border-radius: 3px;
+  border-radius: 5px;
   height: 400px;
   margin-top: 20px;
   display: flex;
@@ -44,6 +45,7 @@
   justify-content: flex-start;
   align-items: center;
   background-color: #f5f5f5;
+  box-shadow: 0 0 10px 0 #a0a1b69c;
   transition: all 0.25s;
 }
 
