@@ -1,69 +1,55 @@
+## ToDo App
 
-[Demo link](https://todo-redux-saga.netlify.app/)
+ToDo App is a simple and awesome app to organize your tasks with a very easy-to-use interface. ToDo can help you to make a list of your tasks.
 
-## Available Scripts
+## Live demo :tv:
 
-In the project directory, you can run:
+Click here [Todo App](https://todo-redux-saga.netlify.app/) to get a nice experience by using the demo version.
 
-### `yarn start`
+## Usage The App
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ 1. Switch between light and dark mode by click on sun/moon icon.
+ 2. Type you task description in the description input and click on the left button.
+ 3. In the List of todos, you can switch the todo state to be complete or not by click on the button on the left side of the todo.
+ 4. You can update the todo by double click on the todo to get the update form.
+ 5. Delete the todos by click on the cross icon that appears when the mouse hovers on the todo.
+ 6. You can find the item left in the footer, and you can filter the todos by click on the filter button that you can see three filter states.
+ 7. Delete all completed todo by click on the clear completed button.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## App Images
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Technologies :computer:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ 1. [React](https://reactjs.org/)
+ 2. [Redux](https://redux.js.org/)
+ 3. [Redux-Saga](https://redux-saga.js.org/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Why Redux and Redux-Saga
+**Redux** is a predictable state container designed to help you write JavaScript apps that behave consistently across client, server, and native environments and are easy to test. While it's mostly **used** as a state management tool with React, you can **use** it with any other JavaScript framework or library.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**redux**-**saga** is a library that aims to make application side effects (i.e. asynchronous things like data fetching and impure things like accessing the browser cache) easier to manage, more efficient to execute, easy to test, and better at handling failures.
+Where as **redux**-**saga** is a library that mainly focuses on easy handling of application side effects and more efficient for execution.
 
-### `yarn eject`
+  
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Getting Started 📣
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**1. You can start by cloning the repository on your local machine by running:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+git clone https://github.com/GSG-G9/ow-todo-app-muhammad.git
+cd ow-todo-app-muhammad
+```
+**2. Install all of the dependencies:**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```sh
+npm i
+```
+**3. run the app locally:🔌**
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```sh
+npm start
+```
+Now the app should be running at [http://localhost:3000](http://localhost:3000)
